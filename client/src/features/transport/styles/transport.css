@@ -1,0 +1,10 @@
+.imgCont{
+    width: 500px !important;
+    height: 400px !important;
+  }
+  .card{
+    border: solid grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
