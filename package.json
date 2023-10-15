@@ -1,0 +1,13 @@
+{
+  "name": "321",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "cd server && npm i && npx sequelize db:migrate && cd ../client && npm i && DISABLE_ESLINT_PLUGIN=true npm run build",
+    "start": "cd server && npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
