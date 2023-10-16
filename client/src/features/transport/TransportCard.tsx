@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import type { RootState } from '../../store/store';
+import { Transport } from './Type/transport';
 
 
 function TransportCard(): JSX.Element {
@@ -12,7 +13,7 @@ function TransportCard(): JSX.Element {
   let transport;
 
   if (transports.length > 0) {
-    transport = transports.find((transport1) => transport1.id === +idTransport);
+    transport = transports.find((transport1:Transport) => transport1.id === +idTransport);
   }
 
   return (
