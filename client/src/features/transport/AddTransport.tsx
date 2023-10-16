@@ -1,6 +1,6 @@
 import React, { memo, useRef } from 'react';
-import { useDispatch } from 'react-redux';
-import * as api from './api'
+import { addThunk } from './transportSlice';
+import { useAppDispatch } from '../../store/store';
 
 function AddTransport(): JSX.Element {
   const urlInput = useRef<HTMLInputElement>(null);
@@ -8,7 +8,7 @@ function AddTransport(): JSX.Element {
   const descriptionInput = useRef<HTMLInputElement>(null);
   const priceInput = useRef<HTMLInputElement>(null);
   const categoryIdInput = useRef<HTMLInputElement>(null);
-const dispatch =useDispatch()
+const dispatch =useAppDispatch()
 
   const addTransportFetch = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
@@ -38,9 +38,7 @@ const dispatch =useDispatch()
       formData.append('price', price);
       formData.append('category', categoryId);
       
-       api.addTransportFetch(formData)
-        .then((data) => dispatch({ type: 'transports/addTransport', payload: data.newTransport }))
-        .catch((err) => console.log(err));
+       dispatch(addThunk(formData))
      }
   };
 

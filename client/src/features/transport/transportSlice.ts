@@ -26,7 +26,7 @@ const transportsSlice = createSlice({
 
           .addCase(initial.fulfilled, (state, action) => {
 
-            state.transports = action.payload
+            state.transports = action.payload.newTransport
             state.errorTransport=''
           })
           .addCase(initial.rejected, (state, action) => {
