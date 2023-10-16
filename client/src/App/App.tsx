@@ -32,7 +32,7 @@ dispatch(verification())
            <Route path='/addTransport' element={<AddTransport />} />
           <Route path='/transport/:idTransport' element={<TransportCard />} /> 
           <Route path='/registration' element={<Registration/>} />
-          {/* <Route path='/login' element={<Login/>} /> */}
+          <Route path='/login' element={<Login/>} />
         </Route>
       </Routes>
    
