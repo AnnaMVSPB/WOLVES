@@ -12,7 +12,7 @@ function TransportCard(): JSX.Element {
   const transports = useSelector((store:RootState)=>store.transportsState.transports)
   let transport;
 
-  if (transports.length > 0) {
+  if (transports.length > 0 && idTransport) {
     transport = transports.find((transport1:Transport) => transport1.id === +idTransport);
   }
 
