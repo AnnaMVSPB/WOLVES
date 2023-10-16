@@ -10,6 +10,7 @@ function Registration():JSX.Element {
 const [name,setName]=useState('')
 const [email,setEmail]=useState('')
 const [password,setPassword]=useState('')
+const [avatar,setAvatar]=useState('')
 const dispatch=useAppDispatch()
  const nav = useNavigate()
  const {errUser,user} = useSelector((store:RootState)=>store.auth)
@@ -23,7 +24,7 @@ if (user){
     const rega=(e:React.FormEvent<HTMLFormElement> ):void=>{
       e.preventDefault()
 
-      dispatch(registgation({name,email,password}))
+      dispatch(registgation({name,email,password,avatar}))
 
     }
   return (
@@ -32,6 +33,7 @@ if (user){
             <input name='name' placeholder='name' value={name} onChange={(e)=>setName(e.target.value)} required/>
             <input name='email' placeholder='email' type='email'value={email} onChange={(e)=>setEmail(e.target.value)} required/>
             <input name='password' type='password' placeholder='password' value={password} onChange={(e)=>setPassword(e.target.value)} required/>
+            <input name='avatar' placeholder='avatar' type='text'value={avatar} onChange={(e)=>setAvatar(e.target.value)} />
             <button type='submit'>rega</button>
         </form>
         <div>{errUser}</div>
