@@ -20,7 +20,7 @@ headers:{'content-type':"application/json"}
   return data
   };
 
-  export const addTransportFetch = async (obj:FormData): Promise<Transport> => {
+  export const addTransportFetch = async (obj:FormData): Promise<{ message:string, newTransport:Transport }> => {
     const data = await (await fetch(`/api/transports`,
     {method:'POST',
       body:obj
