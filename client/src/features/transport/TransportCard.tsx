@@ -9,7 +9,7 @@ function TransportCard(): JSX.Element {
 
   const { idTransport } = useParams();
   const navigate = useNavigate();
-  const transports = useSelector((store:RootState)=>store.transportsState.transports)
+  const transports = useSelector((store:RootState)=>store.transports.transports)
   let transport;
 
   if (transports.length > 0 && idTransport) {
@@ -19,7 +19,7 @@ function TransportCard(): JSX.Element {
   return (
     <div>
       <h2>{transport?.name}</h2>
-      {transport?.Photos.map((img) => <img src={img.url} alt="" />)}
+      {transport?.Photos.map((img:{url:string}) => <img src={img.url} alt="" />)}
       <p>{transport?.description}</p>
       <p>{transport?.price}</p>
       <button type='button' onClick={() => navigate(-1)}>ВЕРНУТЬСЯ В ПРОШЛОЕ НЕЛЬЗЯ НО МОЖНО</button>
